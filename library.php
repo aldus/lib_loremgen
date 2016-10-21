@@ -83,12 +83,17 @@ class LEPTON_loremgen
 		'form'	=> array()
 	);
 
+	/**
+	 *	Return the »internal«
+	 *
+	 *	@param	array	Optional params
+	 */
 	public static function getInstance( &$aOptions=array() )
     {
         if (null === static::$instance) {
             static::$instance = new static();
             
-            	static::$instance->__construct( $aOptions );
+            	static::$instance->init_values( $aOptions );
         }
         
         return static::$instance;
@@ -96,10 +101,17 @@ class LEPTON_loremgen
     
 	/**
 	 *	Constructor of the class
+	 */
+	protected function __construct() {
+
+	}
+	
+	/**
+	 *	Initialize the class values
 	 *
 	 *	@param	array	Optional params
 	 */
-	protected function __construct(&$aOptions=array()) {
+	protected function init_values( &$aOptions=array() ) {
 		foreach($aOptions as $name=>$val) {
 			if(isset(static::$settings[ $name ])) static::$settings[ $name ] = $val;
 		}
