@@ -14,29 +14,15 @@
  *
  */
 
-if (defined('LEPTON_PATH')) {   
-   include(LEPTON_PATH.'/framework/class.secure.php');
-} else {
-   $oneback = "../";
-   $root = $oneback;
-   $level = 1;
-   while (($level < 10) && (!file_exists($root.'/framework/class.secure.php'))) {
-      $root .= $oneback;
-      $level += 1;
-   }
-   if (file_exists($root.'/framework/class.secure.php')) {
-      include($root.'/framework/class.secure.php');
-   } else {
-      trigger_error(sprintf("[ <b>%s</b> ] Can't include class.secure.php!", $_SERVER['SCRIPT_NAME']), E_USER_ERROR);
-   }
-}
+require_once( "x_head.php" );
+
 $module_directory	= 'lib_loremgen';
 $module_name		= 'LEPTON Lorem Gen(-erator)';
 $module_function	= 'library';
-$module_version		= '0.1.2';
+$module_version		= '0.2.0';
 $module_platform	= '2.2.0';
 $module_delete		=  true;
-$module_author		= 'LEPTON team, several independent authors';
+$module_author		= 'LEPTON team, several independent authors.';
 $module_license		= 'GNU General Public License';
 $module_description	= 'Class to generate some Lorem-Ipsum layout text.';
 $module_home		= 'http://www.lepton-cms.org/';
