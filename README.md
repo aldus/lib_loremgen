@@ -14,7 +14,7 @@ Name|Description
 *repeat*|How many time to repeat the used blocks? Default is 1.
 
 #### droplet code
-Create a new droplet, name it e.g. "lorem2" and paste the following code into.
+Create a new droplet, name it e.g. "lorem2":
 
 ```code
 
@@ -24,7 +24,6 @@ if (!isset($offset)) $offset = 0;
 if (!isset($repeat)) $repeat = 1;
 
 require_once( LEPTON_PATH."/modules/lib_loremgen/library.php" );
-
 return LEPTON_loremgen::getInstance()->lorem2( $set, $blocks, $offset, $repeat );
 
 ```
@@ -38,8 +37,8 @@ require_once( LEPTON_PATH."/modules/lib_loremgen/library.php" );
 $lorem = LEPTON_loremgen::getInstance();
 
 $lorem->use_set("fun");
-$lorem->set( 'blocks', 2 );
-$lorem->set('offset', 1);
+$lorem->set("blocks", 2 );
+$lorem->set("offset", 1);
 
 echo $lorem->generate("<br />");
 
