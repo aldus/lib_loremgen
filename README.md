@@ -8,12 +8,21 @@
 #### params
 Name|Description
 -----|-----
-*set*|The used set (of textes). Available 'sets' are **lorem**, **berthold**, **fun**, **css**, **img**, **cicero** and *all*.
+*set*|The used set (of textes). Available 'sets' are **lorem**, **berthold**, **fun**, **css**, **img**, **cicero**, **form** and *all*.
 *blocks*|The number of blocks to display. Default is 1 (block).
 *offset*|Gives the offset of used set. E.g. if you want only use block 2 of set 'berthold' you will have to set offset to 2.
 *repeat*|How many time to repeat the used blocks? Default is 1.
 
-#### droplet code
+Set|Description
+-----|-----
+*css*|Two css testblocks with some »defaults«.
+*img*|Four images (linked inside the ~modules/lib_loremgen/img/...).
+*form*|Special - the form-templates are inside ~modules/lib_loremgen/forms/
+
+#### notice
+- Since version 0.3.0 the code is for LEPTON-CMS 2.3 autoloader. 
+
+#### example code
 Create a new droplet, name it e.g. "lorem2":
 
 ```code
@@ -23,8 +32,7 @@ if (!isset($set)) $set = 'lorem';
 if (!isset($offset)) $offset = 0;
 if (!isset($repeat)) $repeat = 1;
 
-require_once( LEPTON_PATH."/modules/lib_loremgen/library.php" );
-return LEPTON_loremgen::getInstance()->lorem2( $set, $blocks, $offset, $repeat );
+return lib_loremgen::getInstance()->lorem2( $set, $blocks, $offset, $repeat );
 
 ```
 
@@ -32,9 +40,7 @@ Another example given (inside a e.g. 'code2' section:
 
 ```code
 
-require_once( LEPTON_PATH."/modules/lib_loremgen/library.php" );
-
-$lorem = LEPTON_loremgen::getInstance();
+$lorem = lib_loremgen::getInstance();
 
 $lorem->use_set("fun");
 $lorem->set("blocks", 2 );
@@ -44,7 +50,7 @@ echo $lorem->generate("<br />");
 
 ```
 
-There is also a zip file for importing an example-droplet inside the module.
+There is a droplet »lorem2« installed during the installation.
 
 #### call as droplet
 Example given
@@ -60,4 +66,4 @@ Example given
 
 Kind regards - Aldus
 
-*10.2016*
+*2.2017*
