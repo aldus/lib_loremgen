@@ -181,10 +181,12 @@ class lib_loremgen
 	 *	@param	integer	The number of blocks to generate.
 	 *	@param	integer	The 'offset' of the current used array.
 	 *	@param	integer	How many repeats.
+	 *	&param	integer	The maximum of chars to generate. Default is 0 for "all chars".
+	 *
 	 *	@return	string	The generated sting.
 	 *	
 	 */
-	public function lorem2( $set = 'lorem', $blocks = 1, $offset = 0, $repeat = 1) {
+	public function lorem2( $set = 'lorem', $blocks = 1, $offset = 0, $repeat = 1, $max = 0) {
 
 		$aNames = array_keys( static::$text );
 		if ( !isset($set) || !in_array( $set, $aNames )) {
@@ -208,9 +210,40 @@ class lib_loremgen
 				$str .= implode("<br /><br />", array_slice(static::$text[$set], $offset, $blocks))." ";
 			}
 		}
-		return $str;
+		
+		return (0 < $max )
+			? static::$instance->cut($str, $max)
+			: $str
+			;
 
 	}
 	
+	/**
+	 *	Cut a given string after n chars - uring word boundaries and 
+	 *	takes care for punctuation marks, e.g. '!','?' or ';'.
+	 *
+	 *	@param	string	The source string.
+	 *	@param	integer The maximum of chars. Default is '0' for 'all'.
+	 *
+	 */
+	public static function cut( &$sSource, $iMax=0 ) {
+		if ( 0 == $iMax ) return $sSource;
+		
+		if (strlen($sSource) > $iMax) {
+			$match = array();
+			if(preg_match('/.{0,'.$iMax.'}(?:[.!?:,])/su', $sSource, $match))
+			{	
+				$sSource = $match[0];
+			}			
+			if (strlen($sSource) > $iMax)
+			{
+				$pos = strpos($sSource, " ", $iMax -20);
+				if ($pos > 0) {
+					$sSource = substr($sSource, 0,  $pos);
+				}					
+			}
+		}
+		return $sSource;
+	}
 }
 ?>

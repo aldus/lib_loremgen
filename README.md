@@ -12,6 +12,7 @@ Name|Description
 *blocks*|The number of blocks to display. Default is 1 (block).
 *offset*|Gives the offset of used set. E.g. if you want only use block 2 of set 'berthold' you will have to set offset to 2.
 *repeat*|How many time to repeat the used blocks? Default is 1.
+*max*|The maximum of chars to generate. Default is 0 for all (no limitation).
 
 Set|Description
 -----|-----
@@ -19,10 +20,12 @@ Set|Description
 *img*|Four images (linked inside the ~modules/lib_loremgen/img/...).
 *form*|Special - the form-templates are inside ~modules/lib_loremgen/forms/
 
-#### notice
-- Since version 0.3.0 the code is for LEPTON-CMS 2.3 autoloader. 
 
 #### example code
+
+###### notice
+- Since version 0.3.0 the code is for LEPTON-CMS 2.3 autoloader. 
+
 Create a new droplet, name it e.g. "lorem2":
 
 ```code
@@ -31,8 +34,9 @@ if (!isset($blocks)) $blocks = 1;
 if (!isset($set)) $set = 'lorem';
 if (!isset($offset)) $offset = 0;
 if (!isset($repeat)) $repeat = 1;
+if (!isset($max)) $max = 0;
 
-return lib_loremgen::getInstance()->lorem2( $set, $blocks, $offset, $repeat );
+return lib_loremGen::getInstance()->lorem2( $set, $blocks, $offset, $repeat, $max );
 
 ```
 
