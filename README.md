@@ -14,6 +14,8 @@ Name|Description
 *repeat*|How many time to repeat the used blocks? Default is 1.
 *max*|The maximum of chars to generate. Default is 0 for all (no limitation).
 
+Some details:
+
 Set|Description
 -----|-----
 *css*|Two css testblocks with some »defaults«.
