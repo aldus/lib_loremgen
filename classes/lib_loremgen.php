@@ -231,7 +231,7 @@ class lib_loremgen
 		
 		if (strlen($sSource) > $iMax) {
 			$match = array();
-			if(preg_match('/.{0,'.$iMax.'}(?:[.!?:,])/su', $sSource, $match))
+			if(preg_match('/.{0,'.$iMax.'}(?:[.!?:,«])/su', $sSource, $match))
 			{	
 				$sSource = $match[0];
 			}			
