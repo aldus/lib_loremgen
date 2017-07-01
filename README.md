@@ -64,7 +64,7 @@ Example given
 
 [[lorem2?set=berthold&offset=2&blocks=2]]
 
-[[lorem2?set=fun&offset=4]]
+[[lorem2?set=fun&offset=6]]
 
 [[lorem2?set=img]]
 
@@ -72,4 +72,4 @@ Example given
 
 Kind regards - Aldus
 
-*2.2017*
+*3.2017*

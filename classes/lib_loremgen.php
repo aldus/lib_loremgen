@@ -19,7 +19,7 @@ class lib_loremgen
 	/**
 	 *	Private protected var for the currend version.
 	 */
-	protected $version = "0.3.0";
+	protected $version = "0.3.1";
 
 	/**
      * @var Singleton The reference to *Singleton* instance of this class
