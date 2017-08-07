@@ -38,7 +38,7 @@ if (!isset($offset)) $offset = 0;
 if (!isset($repeat)) $repeat = 1;
 if (!isset($max)) $max = 0;
 
-return lib_loremGen::getInstance()->lorem2( $set, $blocks, $offset, $repeat, $max );
+return lib_loremgen::getInstance()->lorem2( $set, $blocks, $offset, $repeat, $max );
 
 ```
 
