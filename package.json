@@ -1,0 +1,16 @@
+{
+	"name": "lib_loremgen",
+	"version": "0.3.1",
+	"description": "Class to generate some Lorem-Ipsum layout text.",
+	"main": "library.php",
+	"license": "GPL-2.0",
+	"keywords": [
+		"LEPTON-CMS",
+		"modules",
+		"library",
+		"loremIpsum"
+	],
+	"bugs": {
+		"url": "https://github.com/aldus/lib_loremgen/issues/"
+	}
+}
