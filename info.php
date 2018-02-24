@@ -43,7 +43,7 @@ else
 $module_directory	= 'lib_loremgen';
 $module_name		= 'LEPTON Lorem Gen(-erator)';
 $module_function	= 'library';
-$module_version		= '0.3.1';
+$module_version		= '0.4.0';
 $module_platform	= '2.3.0';
 $module_delete		=  true;
 $module_author		= 'LEPTON team, several independent authors for the text.';
@@ -52,4 +52,3 @@ $module_description	= 'Class to generate some Lorem-Ipsum layout text.';
 $module_home		= 'http://www.lepton-cms.org/';
 $module_guid		= '864565EF-AA62-45E0-8EF5-C69F92393A7C';
 
-?>

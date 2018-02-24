@@ -14,17 +14,22 @@
  *
  */
 
-class lib_loremgen
+class lib_loremgen extends LEPTON_abstract
 {
 	/**
 	 *	Private protected var for the currend version.
 	 */
-	protected $version = "0.3.1";
+	protected $version = "0.4.0";
 
 	/**
      * @var Singleton The reference to *Singleton* instance of this class
      */
-    private static $instance;
+    public static $instance;
+    
+    public function initialize()
+    {
+    
+    }
     
 	/**
 	 *	Public var that holds the settings inside an assoc. array.
